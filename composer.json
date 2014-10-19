@@ -1,0 +1,21 @@
+{
+    "name": "dgafka/todo-list",
+    "description": "Application using clean code architecture, behat and phpspec.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dgafka",
+            "email": "dariss6666@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "require-dev": {
+        "behat/behat" : "2.4.*@stable",
+        "phpspec/phpspec" : "~2.0"
+    },
+    "config": {
+        "bin-dir": "bin/"
+    }
+}
