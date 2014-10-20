@@ -1,0 +1,9 @@
+suites:
+    dgafka_suite:
+        namespace: \Dgafka\Todolist
+        spec_prefix: dgafka_spec
+
+    # shortcut for
+    # my_suite:
+    #     namespace: The\Namespace
+    my_suite: The\Namespace
