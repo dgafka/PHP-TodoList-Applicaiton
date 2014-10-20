@@ -20,19 +20,19 @@ class Task
 	/** Task date
 	 * @var \DateTime
 	 */
-	protected $time;
+	protected $date;
 	/** Task owner
 	 * @var User
 	 */
 	protected $user;
 
 
-    public function __construct($id, $name, $description, \DateTime $time)
+    public function __construct($id, $name, $description, \DateTime $date)
     {
         $this->id          = $id;
 	    $this->name        = $name;
 	    $this->description = $description;
-	    $this->time        = $time;
+	    $this->date        = $date;
     }
 
 	/**
@@ -86,17 +86,17 @@ class Task
 	/**
 	 * @return \DateTime
 	 */
-	public function getTime()
+	public function getDate()
 	{
-		return $this->time;
+		return $this->date;
 	}
 
 	/**
-	 * @param \DateTime $time
+	 * @param \DateTime $date
 	 */
-	public function setTime(\DateTime $time)
+	public function setDate(\DateTime $date)
 	{
-		$this->time = $time;
+		$this->date = $date;
 	}
 
 	/**

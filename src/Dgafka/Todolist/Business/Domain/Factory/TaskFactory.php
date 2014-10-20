@@ -9,7 +9,7 @@ use Dgafka\Todolist\Business\Domain\Entity\User;
  * Class TaskFactory
  * @package Dgafka\Todolist\Business\Domain\Factory
  */
-class TaskFactory
+class TaskFactory implements Factory
 {
 
 	/** User owner of the task

@@ -8,7 +8,7 @@ use Dgafka\Todolist\Business\Domain\Entity\User;
  * Class UserFactory
  * @package Dgafka\Todolist\Business\Domain\Factory
  */
-class UserFactory
+class UserFactory implements Factory
 {
 
 	/** Creates new user
