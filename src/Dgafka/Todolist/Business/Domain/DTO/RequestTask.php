@@ -10,23 +10,23 @@ class RequestTask implements Request
 	/**
 	 * @var int
 	 */
-	public $id;
+	protected $id;
 	/**
 	 * @var string
 	 */
-	public $name;
+	protected $name;
 	/**
 	 * @var string
 	 */
-	public $description;
+	protected $description;
 	/**
 	 * @var \Datetime
 	 */
-	public $date;
+	protected $date;
 	/**
 	 * @var User
 	 */
-	public $user;
+	protected $user;
 
 
     public function __construct($id, $name, $description, \DateTime $date, User $user)
@@ -37,5 +37,45 @@ class RequestTask implements Request
 	    $this->date = $date;
 	    $this->user = $user;
     }
+
+	/**
+	 * @return \Datetime
+	 */
+	public function getDate()
+	{
+		return $this->date;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getDescription()
+	{
+		return $this->description;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getId()
+	{
+		return $this->id;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getName()
+	{
+		return $this->name;
+	}
+
+	/**
+	 * @return User
+	 */
+	public function getUser()
+	{
+		return $this->user;
+	}
 
 }

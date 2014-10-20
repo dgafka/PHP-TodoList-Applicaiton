@@ -8,11 +8,11 @@ class RequestUser implements Request
 	/**
 	 * @var int
 	 */
-	public $id;
+	protected $id;
 	/**
 	 * @var string
 	 */
-	public $name;
+	protected $name;
 	/**
 	 * @var string
 	 */
@@ -20,7 +20,7 @@ class RequestUser implements Request
 	/**
 	 * @var string
 	 */
-	public $email;
+	protected $email;
 
 
     public function __construct($id, $name, $password, $email)
@@ -34,8 +34,33 @@ class RequestUser implements Request
 	/**
 	 * @return string
 	 */
-    public function getPassword()
-    {
-        return $this->password;
-    }
+	public function getEmail()
+	{
+		return $this->email;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getId()
+	{
+		return $this->id;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getName()
+	{
+		return $this->name;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getPassword()
+	{
+		return $this->password;
+	}
+
 }

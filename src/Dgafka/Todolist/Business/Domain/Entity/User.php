@@ -2,7 +2,7 @@
 
 namespace Dgafka\Todolist\Business\Domain\Entity;
 
-class User
+class User implements Entity
 {
 
 	/** Identity of User

@@ -23,11 +23,11 @@ class RequestTaskSpec extends ObjectBehavior
     }
 
 	function it_should_return_values_it_was_constructed_with() {
-		$this->id->shouldReturn(1);
-		$this->name->shouldReturn('Task name');
-		$this->description->shouldReturn('desc');
-		$this->date->shouldHaveType('\Datetime');
-		$this->user->getId()->shouldReturn(1);
+		$this->getId()->shouldReturn(1);
+		$this->getName()->shouldReturn('Task name');
+		$this->getDescription()->shouldReturn('desc');
+		$this->getDate()->shouldHaveType('\Datetime');
+		$this->getUser()->getId()->shouldReturn(1);
 	}
 
 }

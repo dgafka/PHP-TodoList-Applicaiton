@@ -2,7 +2,7 @@
 
 namespace Dgafka\Todolist\Business\Domain\Entity;
 
-class Task
+class Task implements Entity
 {
 
 	/** Identity of Task

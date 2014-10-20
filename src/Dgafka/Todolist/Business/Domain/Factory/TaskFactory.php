@@ -2,8 +2,9 @@
 
 namespace Dgafka\Todolist\Business\Domain\Factory;
 
+use Dgafka\Todolist\Business\Domain\DTO\Request;
+use Dgafka\Todolist\Business\Domain\DTO\RequestTask;
 use Dgafka\Todolist\Business\Domain\Entity\Task;
-use Dgafka\Todolist\Business\Domain\Entity\User;
 
 /** Class responsible for creating new Tasks
  * Class TaskFactory
@@ -12,30 +13,19 @@ use Dgafka\Todolist\Business\Domain\Entity\User;
 class TaskFactory implements Factory
 {
 
-	/** User owner of the task
-	 * @var User|null
-	 */
-	protected $user = null;
-
-	/**
-	 * @param User $user
-	 */
-	public function __construct(User $user)
-	{
-		$this->user = $user;
-	}
-
 	/** Creates new Task instance
-	 * @param $id int
-	 * @param $name string
-	 * @param $description string
-	 * @param $date \DateTime
+	 * @param Request $request
 	 * @return Task
 	 */
-    public function create($id, $name, $description, \DateTime $date)
+    public function create(Request $request)
     {
-        $task = new Task($id, $name, $description, $date);
-	    $task->setUser($this->user);
+
+	    if(!$request instanceof RequestTask) {
+		    throw new \LogicException("Request for task factory, should be instance of RequestTask");
+	    }
+
+        $task = new Task($request->getId(), $request->getName(), $request->getDescription(), $request->getDate());
+	    $task->setUser($request->getUser());
 
 	    return $task;
     }

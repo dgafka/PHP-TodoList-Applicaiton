@@ -22,10 +22,10 @@ class RequestUserSpec extends ObjectBehavior
     }
 
 	function it_should_return_values_it_was_constructed_with() {
-		$this->id->shouldReturn(1);
-		$this->name->shouldReturn('Daris');
+		$this->getId()->shouldReturn(1);
+		$this->getName()->shouldReturn('Daris');
 		$this->getPassword()->shouldReturn('secret');
-		$this->email->shouldBeNull();
+		$this->getEmail()->shouldBeNull();
 	}
 
 }
