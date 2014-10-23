@@ -1,0 +1,12 @@
+Dgafka\Todolist\Business\Domain\Entity\User:
+    db: test_todolist
+    collection: user
+    fields:
+        id:
+            id:  true
+        name:
+            type: string
+        password:
+            type: string
+        email:
+            type: string

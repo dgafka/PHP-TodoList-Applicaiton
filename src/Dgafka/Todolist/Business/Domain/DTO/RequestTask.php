@@ -29,15 +29,6 @@ class RequestTask implements Request
 	protected $user;
 
 
-    public function __construct($id, $name, $description, \DateTime $date, User $user)
-    {
-        $this->id = $id;
-	    $this->name = $name;
-	    $this->description = $description;
-	    $this->date = $date;
-	    $this->user = $user;
-    }
-
 	/**
 	 * @return \Datetime
 	 */
@@ -76,6 +67,46 @@ class RequestTask implements Request
 	public function getUser()
 	{
 		return $this->user;
+	}
+
+	/**
+	 * @param \Datetime $date
+	 */
+	public function setDate($date)
+	{
+		$this->date = $date;
+	}
+
+	/**
+	 * @param string $description
+	 */
+	public function setDescription($description)
+	{
+		$this->description = $description;
+	}
+
+	/**
+	 * @param int $id
+	 */
+	public function setId($id)
+	{
+		$this->id = $id;
+	}
+
+	/**
+	 * @param string $name
+	 */
+	public function setName($name)
+	{
+		$this->name = $name;
+	}
+
+	/**
+	 * @param User $user
+	 */
+	public function setUser($user)
+	{
+		$this->user = $user;
 	}
 
 }

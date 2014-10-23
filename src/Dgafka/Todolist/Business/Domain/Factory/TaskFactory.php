@@ -10,7 +10,7 @@ use Dgafka\Todolist\Business\Domain\Entity\Task;
  * Class TaskFactory
  * @package Dgafka\Todolist\Business\Domain\Factory
  */
-class TaskFactory implements Factory
+class TaskFactory extends Factory
 {
 
 	/** Creates new Task instance
@@ -24,9 +24,10 @@ class TaskFactory implements Factory
 		    throw new \LogicException("Request for task factory, should be instance of RequestTask");
 	    }
 
-        $task = new Task($request->getId(), $request->getName(), $request->getDescription(), $request->getDate());
+        $task = new Task($request->getName(), $request->getDescription(), $request->getDate());
 	    $task->setUser($request->getUser());
 
+	    $this->repository->save($task);
 	    return $task;
     }
 

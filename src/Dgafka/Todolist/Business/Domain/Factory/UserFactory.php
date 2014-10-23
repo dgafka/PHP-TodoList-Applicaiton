@@ -10,7 +10,7 @@ use Dgafka\Todolist\Business\Domain\Entity\User;
  * Class UserFactory
  * @package Dgafka\Todolist\Business\Domain\Factory
  */
-class UserFactory implements Factory
+class UserFactory extends  Factory
 {
 
 	/** Creates new user
@@ -24,8 +24,10 @@ class UserFactory implements Factory
 		    throw new \LogicException('Request for user factory, should be instance of UserTask');
 	    }
 
+        $user = new User($request->getName(), $request->getPassword(), $request->getEmail());
+	    $this->repository->save($user);
 
-        return new User($request->getId(), $request->getName(), $request->getPassword(), $request->getEmail());
+	    return $user;
     }
 
 }

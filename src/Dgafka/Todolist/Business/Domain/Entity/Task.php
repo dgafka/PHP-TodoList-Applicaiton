@@ -27,9 +27,8 @@ class Task implements Entity
 	protected $user;
 
 
-    public function __construct($id, $name, $description, \DateTime $date)
+    public function __construct($name, $description, \DateTime $date)
     {
-        $this->id          = $id;
 	    $this->name        = $name;
 	    $this->description = $description;
 	    $this->date        = $date;

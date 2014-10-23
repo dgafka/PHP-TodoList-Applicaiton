@@ -7,6 +7,8 @@ use Dgafka\Todolist\Business\Domain\Entity\Entity;
 
 interface Repository {
 
+	public function findAll();
+
 	public function findById($id);
 
 	public function findOneBy($params);

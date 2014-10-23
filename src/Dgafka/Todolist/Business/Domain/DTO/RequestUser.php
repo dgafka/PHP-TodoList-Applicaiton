@@ -22,15 +22,6 @@ class RequestUser implements Request
 	 */
 	protected $email;
 
-
-    public function __construct($id, $name, $password, $email)
-    {
-		$this->id       = $id;
-	    $this->name     = $name;
-	    $this->password = $password;
-	    $this->email    = $email;
-    }
-
 	/**
 	 * @return string
 	 */
@@ -61,6 +52,38 @@ class RequestUser implements Request
 	public function getPassword()
 	{
 		return $this->password;
+	}
+
+	/**
+	 * @param string $email
+	 */
+	public function setEmail($email)
+	{
+		$this->email = $email;
+	}
+
+	/**
+	 * @param int $id
+	 */
+	public function setId($id)
+	{
+		$this->id = $id;
+	}
+
+	/**
+	 * @param string $name
+	 */
+	public function setName($name)
+	{
+		$this->name = $name;
+	}
+
+	/**
+	 * @param string $password
+	 */
+	public function setPassword($password)
+	{
+		$this->password = $password;
 	}
 
 }

@@ -5,36 +5,27 @@ namespace Dgafka\Todolist\Business\Domain\Service\User\Command;
 use Dgafka\Todolist\Business\Domain\DTO\Request;
 use Dgafka\Todolist\Business\Domain\DTO\RequestUser;
 use Dgafka\Todolist\Business\Domain\Factory\Factory;
+use Dgafka\Todolist\Business\Domain\Factory\UserFactory;
 use Dgafka\Todolist\Business\Domain\Repository\Repository;
 use Dgafka\Todolist\Business\Domain\Service\Service;
 
-class Update implements Service
+class FindAll implements Service
 {
-
-	/** Repository to fetch from persistent layer
+	/** Factory to create instance
 	 * @var Repository
 	 */
 	private $repository;
 
 	public function __construct(Repository $repository)
 	{
-		$this->repository = $repository;
+		$this->factory = $repository;
 	}
 
 	public function execute(Request $request) {
 
-		if(!$request instanceof RequestUser) {
-			throw new \LogicException('Error');
-		}
+		$users = $this->repository->findAll();
 
-		/** @var \Dgafka\Todolist\Business\Domain\Entity\User $user */
-		$user = $this->repository->findBy($request->getId());
-		if($user) {
-			$user->setName($request->getName());
-			$this->repository->save($user);
-		}
-
-		return $user;
+		return $users;
 	}
 
 }
